@@ -1,10 +1,10 @@
-import 'package:brews/pages/search/widgets/containers/bews_list_container.dart';
+import 'package:brews/presentation/pages/search/widgets/containers/bews_list_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:brews/cubit/brews/brews_cubit.dart';
-import 'package:brews/pages/search/widgets/containers/loading_container.dart';
-import 'package:brews/pages/search/widgets/containers/search_container.dart';
+import 'package:brews/presentation/pages/search/widgets/containers/loading_container.dart';
+import 'package:brews/presentation/pages/search/widgets/containers/search_container.dart';
 
 class BrewsSearchPage extends StatefulWidget {
   const BrewsSearchPage({Key key}) : super(key: key);

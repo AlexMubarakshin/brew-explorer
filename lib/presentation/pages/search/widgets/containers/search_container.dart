@@ -1,5 +1,6 @@
-import 'package:brews/pages/search/widgets/shared/search_input_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'package:brews/presentation/pages/search/widgets/shared/search_input_widget.dart';
 
 class SearchContainer extends StatelessWidget {
   final ValueChanged<String> _onSubmit;
