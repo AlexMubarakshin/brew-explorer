@@ -10,7 +10,7 @@ class BrewsListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(16),
         itemCount: brews.length,
         itemBuilder: (BuildContext context, int index) {
           return BreweryItem(

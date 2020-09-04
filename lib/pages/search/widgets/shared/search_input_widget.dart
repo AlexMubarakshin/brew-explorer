@@ -14,12 +14,27 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      onSubmitted: _onSubmitted,
-      decoration: InputDecoration(
-        hintText: _hintText,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        suffixIcon: const Icon(Icons.search),
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(8, 0, 0, 0),
+        borderRadius: BorderRadius.all(
+            Radius.circular(10)
+            ),
+      ),
+      padding: const EdgeInsets.all(8),
+      child: TextField(
+        onSubmitted: _onSubmitted,
+        style: const TextStyle(
+          fontSize: 17,
+        ),
+        decoration: InputDecoration(
+            hintText: _hintText,
+            border: InputBorder.none,
+            suffixIcon: const Icon(Icons.search),
+            suffixStyle:
+                const TextStyle(color: Color.fromARGB(255, 142, 142, 147)),
+            hintStyle:
+                const TextStyle(color: Color.fromARGB(255, 142, 142, 147))),
       ),
     );
   }

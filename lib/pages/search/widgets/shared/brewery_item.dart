@@ -1,5 +1,6 @@
-import 'package:brews/models/brewery.dart';
 import 'package:flutter/material.dart';
+
+import 'package:brews/models/brewery.dart';
 
 class BreweryItem extends StatelessWidget {
   final Brewery brewery;
@@ -8,23 +9,33 @@ class BreweryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        Text(
-          brewery.name,
-          textAlign: TextAlign.left,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 8,
+        bottom: 8,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            brewery.name ?? 'NO NAME',
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        Text(
-          brewery.city,
-          textAlign: TextAlign.left,
-          style: const TextStyle(fontSize: 16),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.only(top: 2.0),
+            child: Text(
+              brewery.city ?? 'NO CITY',
+              textAlign: TextAlign.left,
+              style: const TextStyle(fontSize: 14),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

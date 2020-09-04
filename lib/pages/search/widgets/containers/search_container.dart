@@ -13,7 +13,7 @@ class SearchContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16),
       alignment: Alignment.center,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child:
             SearchInput(hintText: 'Enter a brewery name', onSubmitted: _onSubmit),
       ),
