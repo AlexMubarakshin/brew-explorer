@@ -15,6 +15,8 @@ class Brewery {
   final String updatedAt;
   final String websiteUrl;
 
+  final String fullAddress;
+
   Brewery({
     @required this.breweryType,
     @required this.city,
@@ -29,25 +31,42 @@ class Brewery {
     @required this.street,
     @required this.updatedAt,
     @required this.websiteUrl,
+    @required this.fullAddress,
   });
 
   factory Brewery.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
+    final String breweryType = map['brewery_type'] as String;
+    final String city = map['city'] as String;
+    final String country = map['country'] as String;
+    final int id = map['id'] as int;
+    final String latitude = map['latitude'] as String;
+    final String longitude = map['longitude'] as String;
+    final String name = map['name'] as String;
+    final String phone = map['phone'] as String;
+    final String postalCode = map['postal_code'] as String;
+    final String state = map['state'] as String;
+    final String street = map['street'] as String;
+    final String updatedAt = map['updated_at'] as String;
+    final String websiteUrl = map['website_url'] as String;
+    final String fullAddress =
+        "${country ?? 'Unknown country'}, ${state ?? 'Unknown state'}, ${city ?? 'Unknown city'}, ${street ?? 'Unknown street'}, ${postalCode ?? 'Unknown postal code'}";
 
     return Brewery(
-      breweryType: map['breweryType'] as String,
-      city: map['city']  as String,
-      country: map['country']  as String,
-      id: map['id']  as int,
-      latitude: map['latitude']  as String,
-      longitude: map['longitude']  as String,
-      name: map['name']  as String,
-      phone: map['phone']  as String,
-      postalCode: map['postalCode']  as String,
-      state: map['state']  as String,
-      street: map['street']  as String,
-      updatedAt: map['updatedAt']  as String,
-      websiteUrl: map['websiteUrl']  as String,
+      breweryType: breweryType,
+      city: city,
+      country: country,
+      id: id,
+      latitude: latitude,
+      longitude: longitude,
+      name: name,
+      phone: phone,
+      postalCode: postalCode,
+      state: state,
+      street: street,
+      updatedAt: updatedAt,
+      websiteUrl: websiteUrl,
+      fullAddress: fullAddress,
     );
   }
   @override

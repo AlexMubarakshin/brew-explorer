@@ -1,4 +1,6 @@
+import 'package:brews/models/brewery.dart';
 import 'package:brews/presentation/pages/search/widgets/containers/bews_list_container.dart';
+import 'package:brews/presentation/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,6 +18,13 @@ class BrewsSearchPage extends StatefulWidget {
 class _BrewsSearchPageState extends State<BrewsSearchPage> {
   void onSearchSubmit(String brewName) {
     context.bloc<BrewsCubit>().getBrews(brewName);
+  }
+
+  void onBreweryTap(Brewery brewery) {
+    Router.navigator.pushNamed(Router.breweryDetailsPage,
+        arguments: BreweryDetailsPageArguments(
+          brewery: brewery,
+        ));
   }
 
   @override
@@ -50,6 +59,7 @@ class _BrewsSearchPageState extends State<BrewsSearchPage> {
                   Expanded(
                     child: BrewsListContainer(
                       brews: state.brews.toList(),
+                      onBreweryTap: onBreweryTap,
                     ),
                   ),
                 ],

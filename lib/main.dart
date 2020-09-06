@@ -26,6 +26,18 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: const TextTheme(
+            headline1: TextStyle(
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+            ),
+            headline2: TextStyle(
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
         ),
       ),
     );
